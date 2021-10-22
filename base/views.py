@@ -62,7 +62,7 @@ def add_profile(request):
         form = NewProfileForm()
     return render(request, 'new_profile.html', {"form": form})
 
-# update profile
+# update project
 @login_required(login_url='/accounts/login/')
 def update_project(request):
     current_user = request.user
@@ -80,3 +80,26 @@ def update_project(request):
             else:
                 form = UploadForm()
             return render(request,'upload.html',{"user":current_user,"form":form})
+
+# riviewing the project
+@login_required(login_url='/accounts/login/')
+def add_review(request,pk):
+    project = get_object_or_404(Project, pk=pk)
+    current_user = request.user
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            design = form.cleaned_data['design']
+            usability = form.cleaned_data['usability']
+            content = form.cleaned_data['content']
+            review = form.save(commit=False)
+            review.project = project
+            review.juror = current_user
+            review.design = design
+            review.usability = usability
+            review.content = content
+            review.save()
+            return redirect('home')
+    else:
+        form = ReviewForm()
+        return render(request,'review.html',{"user":current_user,"form":form})
