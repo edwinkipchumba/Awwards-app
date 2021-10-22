@@ -36,3 +36,12 @@ def home(request):
         form = ReviewForm()
 
     return render(request,"home.html",{"projects":projects, "reviews":reviews,"form": form,"profile":profile})
+
+# login to update profile
+@login_required(login_url='/accounts/login/')
+def profile(request,profile_id):
+
+    profile = Profile.objects.get(pk = profile_id)
+    projects = Project.objects.filter(profile_id=profile).all()
+
+    return render(request,"profile.html",{"profile":profile,"projects":projects})
