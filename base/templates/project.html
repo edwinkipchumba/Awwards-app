@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{% block content %}
+{{ block.super}}
+{% load bootstrap4 %}
+<br>
+<br>
+
+<!-- fontawesome js -->
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+<div class="container">
+
+  <div class="card-columns">
+
+    <div class="card border-secondary">
+      <img class="card-img-top" class="img-responsive" src="{{project.project_image.url}}" size="100px200">
+    </div>
+    <div class="card-body">
+      <p>Caption: {{project.caption}}</p>
+      <p>Poster: {{project.user}}</p>
+      <p>Reviews: {{review.comment}}</p>
