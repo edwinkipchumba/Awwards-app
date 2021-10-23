@@ -1,36 +1,46 @@
-{% load bootstrap4 %}
+{% include 'projects/navbar.html' %}
 {% load static%}
+{% load ratings %}
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  {% if title %}
-  <title>Awaards - {{title}}</title>
-  {% else %}
-  <title> Awaards </title>
-  {% endif %}
-
-<script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  {% block styles %}
-  {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  <link rel="stylesheet" href="{% static 'css/try.scss' %}">
-  {% endblock %}
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Projects Website</title>
+    {% endif %}
+    
 </head>
-
 <body>
-  {% include "navbar.html" %}
-  {% block content %}{%endblock%}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% block scripts %}
-
-
-  <script src="{% static 'js/script.js' %}"></script>
-  {% bootstrap_javascript %}
-  {% endblock %}
+    {% block navbar %}{% endblock navbar %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message}}" role="alert" >
+                        <h4 class="alert-heading">Well done!</h4>
+                        <p>{{ message }}</p>
+                        <hr>
+                        
+                      </div>
+                    {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock content %}
+ 
+                
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
 </body>
-
 </html>

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Reviews, Profile, Project
+from .models import Projects,ProjectsApi,Review
 
 # Register your models here.
-admin.site.register(Profile)
-admin.site.register(Project)
-admin.site.register(Reviews)
+admin.site.register(Projects)
+admin.site.register(ProjectsApi)
+admin.site.register(Review)
