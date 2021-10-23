@@ -1,10 +1,10 @@
-# Instagram-clone
+# Awwards-App
 
 ## Build by [Kolem Edwin]
 
 ## Description
 
-This is an Instagram clone where people share their images and videos for other users to view. Users can sign up, login, view and post photos, search and follow other users.
+This is an application like Awwards where users can signup, login and post a project to be reviewed and rated.
 
 ## Screenshot images
 
@@ -14,7 +14,7 @@ This is an Instagram clone where people share their images and videos for other 
 
 ## Live page
 
-
+https://github.com/edwinkipchumba/Awwards-app
 
 ## User stories
 
@@ -32,16 +32,14 @@ Users would like to:
 | Behaviour | Input | Output |
 | :-----------------| :-----------------: | ------------------: |
 | Admin Authentication | On demand | Access Admin dashboard |
-| User Authentication | On demand,Verify emails before proceeding | Access Admin dashboard |
-| Display all images with comments and likes | Home page | Clickable links to open any images in a model |
-| Display single images on model | On click | All details should be viewed |
-| To add an image | Through Admin dashboard and homepage | Click on add and upload respectively |
-| To edit image | Through Admin dashboard | Redirected to the image form details and editing happens |
-| To delete an image | Through Admin dashboard | click on image object and confirm by delete button |
-| To search | Enter text in search bar | Users can search by username |
-| View other users profiles via story menu bar | Click username on stories navigation | Users can view all images posted by any user |
-| Comment on images | Add comments below respectively image | Users can add comments on any image |
-| Like images | Add likes to an image | Users can add likes to images they like |
+| Admin Authentication | On demand,Verify emails before proceeding | Access Admin dashboard |
+| Display all projects | Home page | Clickable links to open live projects in different sites |
+| To add a project | Through Admin dashboard and homepage | Click on add and upload respectively |
+| To edit project | Through Admin dashboard | Redirected to the project form details and editing happens |
+| To delete the project | Through Admin dashboard | click on project object and confirm by delete button |
+| To search projects by title | Enter text in search bar | Users can search by project title |
+| Comment on projects | Add comments below respectively project | Users can add comments on any project |
+| Vote on projects | Vote | Users can review projects they like and comment |
 
 ## Setup | Installation Requirements
 
@@ -55,11 +53,11 @@ Users would like to:
 * Open Terminal {Ctrl+Alt+T}
 
 ```
-$git clone https://g
+$git clone https://github.com/edwinkipchumba/Awwards-app
 
 ```
 ```
-$cd awardapp
+$cd awwards-app
 ```
 
 * open based on the text editor you have.
