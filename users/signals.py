@@ -13,7 +13,7 @@ def create_user_profile(sender, instance, created, **kwargs):
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
 
-@receiver(pre_save,sender=User)
+@receiver(post_save,sender=User)
 def create_hash_for_user(sender,instance,**kwargs):
     if not instance.pk:
         print(instance,'[[[[[[[[[[[[[[[[[[[[[')   

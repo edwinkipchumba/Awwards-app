@@ -22,7 +22,7 @@ def index(request):
     context = {
         'projects': projects,
     }
-    return render(request,'projects/index.html',context)
+    return render(request,'index.html',context)
 
 def project_details(request,id):
     project = get_object_or_404(Projects,id=id)
@@ -31,7 +31,7 @@ def project_details(request,id):
         'project':project,
         
     }
-    return render(request,'projects/details.html',context)
+    return render(request,'details.html',context)
 
 def projects_reviews(request,id):
     reviews = get_object_or_404(Review,id=id)
@@ -39,7 +39,7 @@ def projects_reviews(request,id):
         'reviews':reviews,
 
     }
-    return render(request,'projects/details.html',context)
+    return render(request,'details.html',context)
 
 
 @login_required
@@ -64,7 +64,7 @@ def rate_project(request, pk):
 	    'project': project,
     }
 
-    return render(request,'projects/rate.html',context)
+    return render(request,'rate.html',context)
 
 
 @login_required
@@ -82,7 +82,7 @@ def post_project(request):
     else:
         form = PostProjectsForm()
     context = {'form':form,}
-    return render(request,'projects/post_projects.html',context)
+    return render(request,'post_projects.html',context)
 
 
 class ProjectsList(APIView):
@@ -106,16 +106,16 @@ class ProjectDescription(APIView):
         try:
             return ProjectsApi.objects.get(pk=pk)
         except ProjectsApi.DoesNotExist:
-            raise Http404
+            raise 404
 
     def get(self, request, pk, format=None):
         project = self.get_merch(pk)
-        serializers = ApiSerializer(merch)
+        serializers = ApiSerializer()
         return Response(serializers.data)
 
     def put(self, request, pk, format=None):
         project = self.get_project(pk)
-        serializers = ProjectSerializer(project, request.data)
+        serializers = ApiSerializer(project, request.data)
         if serializers.is_valid():
             serializers.save()
             return Response(serializers.data)

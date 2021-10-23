@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<body>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 mx-auto">
+            <div class="card card-signin flex-row my-5">
+            
+                <div class="card-body">
+                <h5 class="card-title text-center">Logout</h5>
+                <p>You have successfully logged out</p>
+                <hr>
+               
+                    
+                    <a class="d-block text-center mt-2 small" href="{% url 'login' %}">Login</a>
+                    <hr class="my-4">
+             
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3"></div>
+      </div>
+    </div>
+  </body>
+  
+{% endblock %}

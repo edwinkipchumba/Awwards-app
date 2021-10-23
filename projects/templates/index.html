@@ -1,10 +1,11 @@
-{% extends 'projects/base.html' %}
+{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 {% load ratings %}
 
 {% for project in projects %}
 <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+
 <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
 
 <div class="card" style="width: 700px;">
