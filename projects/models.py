@@ -4,6 +4,8 @@ from django.utils import timezone
 from cloudinary.models import CloudinaryField
 from django.contrib.contenttypes.fields import GenericRelation
 from star_ratings.models import Rating
+from django.dispatch import receiver
+
 # Create your models here.
 
 class Rating(models.Model):
@@ -24,6 +26,10 @@ class Projects(models.Model):
 
     def __str__(self):
         return self.title
+    
+    # delete project option
+    # def delete(self):
+    #     self.delete()
 
     class Meta:
         ordering = ['-date_posted']
@@ -51,6 +57,6 @@ RATE_CHOICES = [
 
 class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    project = models.ForeignKey(Projects, on_delete=models.CASCADE)
+    project = models.ForeignKey(Projects, on_delete = models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     rate = models.PositiveSmallIntegerField(choices=RATE_CHOICES)

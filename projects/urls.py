@@ -1,6 +1,7 @@
 from django.urls import path,include,re_path
 from django.conf.urls import url
 from . import views
+# from . import projects
 
 urlpatterns = [
     re_path(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
@@ -10,5 +11,6 @@ urlpatterns = [
     path('api/projects/', views.ProjectsList.as_view()),
     path('api/project/project-id/<int:pk>/',views.ProjectDescription.as_view()),
     path('rate/<int:pk>/',views.rate_project,name='rate'),
+    # re_path(r'^delete/(?P<project_id>\d+)$',projects.delete,name='delete'),
 ]
 

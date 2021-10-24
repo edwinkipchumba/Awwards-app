@@ -25,7 +25,7 @@ def register_user(request):
 @login_required
 def profile_view(request):
     profile=Profile.objects.get(user=request.user.id)
-    return render(request,'users/profile.html')
+    return render(request,'users/profile.html',{'profile':profile})
 
 # updates
 @login_required
