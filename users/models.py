@@ -8,7 +8,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 class Profile(models.Model):
     image = CloudinaryField('image')
-    image = models.ImageField(default='avatar.png',upload_to = 'media/profile_pictures')
+    # image = models.ImageField(default='avatar.png',upload_to = 'media/profile_pictures')
     description = models.TextField()
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     email = models.EmailField()
