@@ -24,6 +24,7 @@ class Projects(models.Model):
     ratings = GenericRelation(Rating, related_query_name='projects')
     date_posted = models.DateTimeField(default=timezone.now)
 
+
     def __str__(self):
         return self.title
     
@@ -52,7 +53,7 @@ RATE_CHOICES = [
 	(7, '7 - Good'),
 	(8, '8 - Very Good'),
 	(9, '9 - Perfect'),
-	(10, '10 - Excellent'), 
+	(10,'10 - Excellent'), 
 ]
 
 class Review(models.Model):

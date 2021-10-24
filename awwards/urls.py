@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
 
-app_name='base'
+app_name='projects'
+app_name='users'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('projects.urls')),
-    path('',include('users.urls')),
+    path('users/',include('users.urls')),
     path('api-token-auth/', obtain_auth_token),
 ]
