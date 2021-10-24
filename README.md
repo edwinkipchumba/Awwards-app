@@ -8,13 +8,17 @@ This is an application like Awwards where users can signup, login and post a pro
 
 ## Screenshot images
 
-<img src="static/../instagram/static/images/Screenshot%20from%202021-10-17%2016-22-48.png">
+<img src="../awardapp/static/img/akan%20naming.png">
 
-<img src="static/../instagram/static/images/002.png">
+<img src="../awardapp/static/img/home2.png">
+
+<img src="../awardapp/static/img/home3.png">
+
+<img src="../awardapp/static/img/prof.png">
 
 ## Live page
 
-https://github.com/edwinkipchumba/Awwards-app
+<https://github.com/edwinkipchumba/Awwards-app>
 
 ## User stories
 
@@ -56,6 +60,7 @@ Users would like to:
 $git clone https://github.com/edwinkipchumba/Awwards-app
 
 ```
+
 ```
 $cd awwards-app
 ```
@@ -67,11 +72,11 @@ $cd awwards-app
 * Creating the virtual environment
 
  ```
-$ pip install virtualenv 
+pip install virtualenv 
 ```
 
 ```
-$ virtualenv venv
+virtualenv venv
 ```
 
 $ source venv/bin/activate
@@ -79,7 +84,7 @@ $ source venv/bin/activate
 * Install Django Dependencies
 
 ```
-$ pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Setup Database
@@ -87,7 +92,7 @@ $ pip install -r requirements.txt
 * setup your database User,Password, Host then make migrations
 
 ```
-$ python manage.py makemigrations
+python manage.py makemigrations
 ```
 
 ## Now migrate
@@ -122,4 +127,4 @@ If you find a bug, kindly feel free to comment an issue here and inlcude their c
 
 ## License
 
-https://github.com/edwinkipchumba/Awwards-app/blob/master/LICENSE
+<https://github.com/edwinkipchumba/Awwards-app/blob/master/LICENSE>
