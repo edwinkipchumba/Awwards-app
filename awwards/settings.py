@@ -173,6 +173,7 @@ cloudinary.config(
   
 )
 
+LOGIN_URL = '/'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
