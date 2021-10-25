@@ -8,13 +8,13 @@ This is an application like Awwards where users can signup, login and post a pro
 
 ## Screenshot images
 
-<img src="../awardapp/static/img/akan%20naming.png">
+<img src="static../../static/img/akan%20naming.png">
 
-<img src="../awardapp/static/img/home2.png">
+<img src="static../../static/img/home2.png">
 
-<img src="../awardapp/static/img/home3.png">
+<img src="static../../static/img/home3.png">
 
-<img src="../awardapp/static/img/prof.png">
+<img src="static../../static/img/prof.png">
 
 ## Live page
 
